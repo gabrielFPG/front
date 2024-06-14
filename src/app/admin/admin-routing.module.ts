@@ -20,7 +20,7 @@ const routes: Routes = [
         component: CategoriaComponent
       },
       {
-        path: "materia",
+        path: "vehiculo",
         component: ProductoComponent
       }
     ]

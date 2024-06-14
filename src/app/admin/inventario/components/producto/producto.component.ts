@@ -6,31 +6,18 @@ import { Component } from '@angular/core';
   styleUrl: './producto.component.scss'
 })
 export class ProductoComponent {
-  materias: any[] = [{ id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 },
-  { id: 1, nombreMateria: "Matematica", descripcion: "Álgebra y Trigonometría", categoria_id: 1 }
+  vehiculos: any[] = [{ id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo", categoria_id: 1 },
+
   ];
   cols: any[] = []
 
   openNew() {
 
   }
-  editMateria(mate: any) {
+  editVehiculo(vehi: any) {
 
   }
-  deleteMateria(mate: any) {
+  deleteVehiculo(vehi: any) {
 
   }
 }
