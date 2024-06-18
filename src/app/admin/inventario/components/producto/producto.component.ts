@@ -1,22 +1,56 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { VehiculosService } from '../../services/vehiculos.service';
 
 @Component({
-  selector: 'app-producto',
+  selector: 'app-vehiculos',
   templateUrl: './producto.component.html',
-  styleUrl: './producto.component.scss'
+  styleUrls: ['./producto.component.scss']
 })
-export class ProductoComponent {
-  vehiculos: any[] = [{ id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo", categoria_id: 1 },
-
+export class VehiculosComponent implements OnInit {
+  categorias: any[] = [
+    { name: 'Ford', code: 'FR' },
+    { name: 'Mazda', code: 'MZ' },
+    { name: 'Kia', code: 'KA' }
   ];
-  cols: any[] = []
+
+  vehiculos: any[] = [
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 2, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" },
+    { id: 1, nombreVehiculo: "Mazda", descripcion: "color rojo" }
+  ];
+
+  cols: any[] = [];
+
+  constructor(private vehiculosService: VehiculosService) {}
+
+  ngOnInit(): void {
+    this.vehiculosService.funListar2().subscribe(
+      (res: any) => {
+        this.vehiculos = res.data;
+      }
+    );
+  }
 
   openNew() {
 
   }
+
   editVehiculo(vehi: any) {
 
   }
+
   deleteVehiculo(vehi: any) {
 
   }

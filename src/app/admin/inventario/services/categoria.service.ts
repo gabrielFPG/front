@@ -19,7 +19,7 @@ export class CategoriaService {
   }
 
   funModificar(id: number, registro: any) {
-    return this.http.patch(`${this.baseUrl}/categoria/${id}`, registro)
+    return this.http.patch(`${this.baseUrl}/categoria/${id}`,registro)
   }
 
   funEliminar(id: number) {

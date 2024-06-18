@@ -9,6 +9,7 @@ import { AppLayoutModule } from './layout/app.layout.module';
 import { CategoriaService } from './inventario/services/categoria.service';
 import { TableModule } from 'primeng/table';
 import { InventarioModule } from './inventario/inventario.module';
+import { VehiculosService } from './inventario/services/vehiculos.service';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,12 @@ import { InventarioModule } from './inventario/inventario.module';
     AdminRoutingModule,
     AppLayoutModule,
     TableModule,
-    InventarioModule
+    InventarioModule,
+    AppLayoutModule
   ],
   providers: [
-    CategoriaService
+    CategoriaService,
+    VehiculosService
   ]
 })
 export class AdminModule { }

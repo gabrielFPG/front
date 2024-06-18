@@ -7,6 +7,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
+import { ButtonModule } from 'primeng/button';
+import { PasswordModule } from 'primeng/password';
+
 
 
 @NgModule({
@@ -22,7 +25,9 @@ import { AuthService } from './services/auth.service';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonModule,
+    PasswordModule
   ]
 })
 export class AuthModule { }

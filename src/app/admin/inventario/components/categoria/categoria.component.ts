@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CategoriaService } from '../../services/categoria.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import Swal from 'sweetalert2'
-import { error } from 'console';
+
 
 interface Categoria {
   id: number,
@@ -20,7 +20,7 @@ export class CategoriaComponent implements OnInit {
 
   categorias: Categoria[] = []
   dialog_visible: boolean = false;
-  categoria_id: number = -1;
+  categoria_id: any = -1;
   categoriaForm = new FormGroup({
     nombreCategoria: new FormControl(''),
     detalle: new FormControl('')
@@ -54,15 +54,15 @@ export class CategoriaComponent implements OnInit {
             this.dialog_visible = false;
             this.getCategorias();
             this.categoria_id = -1;
-            this.alerta("ACTUALIZADO", "La categoría se modifico con éxito!", "success")
-
+            this.alerta("ACTUALIZADO","La categoria se modifico con exito","success")
+        
           },
           (error: any) => {
-            this.alerta("ERROR AL ACTUALIZAR", "Verifica lo datos!", "error")
+            this.alerta("ERROR AL ACTUQLIZAR","Verifica los datos","error")
           }
 
         );
-      this.categoriaForm.reset();
+        this.categoriaForm.reset();
     }
     else {
       this.categoriaService.funGuardar(this.categoriaForm.value).subscribe
@@ -70,16 +70,16 @@ export class CategoriaComponent implements OnInit {
           (res: any) => {
             this.dialog_visible = false;
             this.getCategorias();
-            this.alerta("REGISTRADO", "La categoría se creó con éxito!", "success")
-
-          }
+            this.alerta("REGISTRADO","La categoria se creo con exito!","success")
+          },
         ),
+
         (error: any) => {
-          this.alerta("ERROR AL REGISTRADO", "Verifica lo datos!", "error")
+          this.alerta("ERROR AL REGISTRAR","Verifica los datos","error")
         }
-      this.categoriaForm.reset();
+        this.categoriaForm.reset();
+        }  
     }
-  }
 
 
   editarCategoria(cat: Categoria) {
@@ -100,16 +100,16 @@ export class CategoriaComponent implements OnInit {
       if (result.isConfirmed) {
         this.categoriaService.funEliminar(cat.id).subscribe(
           (res: any) => {
-            this.alerta("ELIMINADO!", "Categoría eliminada.", "success")
+            this.alerta("ELIMINADO!","Categoria eliminada","error")
 
             this.getCategorias();
             this.categoria_id = -1
           },
           (error: any) => {
-            this.alerta("ERROR!", "Error al intentar eliminar.", "error")
-          }
+              this.alerta("ELIMINADO!","Error al intentar eliminada","error")
+            }
+          
         )
-        this.categoriaForm.reset()
       }
     });
   }
